@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Temp\DemoAppForCI\BuildArtifacts\DemoAppForCI.Tests.dll" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-08-11" time="18:00:57">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8662" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\Temp\DemoAppForCI" machine-name="GPSILT12" user="gagan.tandon" user-domain="GPSILT12" />
+  <culture-info current-culture="en-IN" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\Temp\DemoAppForCI\BuildArtifacts\DemoAppForCI.Tests.dll" executed="True" result="Success" success="True" time="0.762" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="DemoAppForCI" executed="True" result="Success" success="True" time="0.754" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.754" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Controllers" executed="True" result="Success" success="True" time="0.754" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="HomeControllerTest" executed="True" result="Success" success="True" time="0.753" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="About" executed="True" result="Success" success="True" time="0.733" asserts="0">
+                        <results>
+                          <test-case name="DemoAppForCI.Tests.Controllers.HomeControllerTest.About()" executed="True" result="Success" success="True" time="0.729" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="ParameterizedTest" name="Contact" executed="True" result="Success" success="True" time="0.007" asserts="0">
+                        <results>
+                          <test-case name="DemoAppForCI.Tests.Controllers.HomeControllerTest.Contact()" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="ParameterizedTest" name="Index" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                        <results>
+                          <test-case name="DemoAppForCI.Tests.Controllers.HomeControllerTest.Index()" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

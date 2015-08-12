@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"  DefaultTargets="RunUnitTests">
+
+  <ItemGroup>    
+    <BuildArtifactsDir Include="BuildArtifacts\" />
+    <SolutionFile Include="DemoAppForCI.sln"></SolutionFile>
+    <NUnitConsole Include="C:\Program Files (x86)\NUnit 2.6.4\bin\nunit-console.exe" />
+    <UnitTestsDLL Include="BuildArtifacts\DemoAppForCI.Tests.dll" />
+    <TestResultsPath Include="BuildArtifacts\TestResults.xml" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <Configuration  Condition=" '$(Configuration)' == ''  ">Release</Configuration>
+    <BuildPlatform  Condition=" '$(BuildPlateform)' == '' ">Any CPU</BuildPlatform>
+  </PropertyGroup>
+
+
+  <Target Name="RunUnitTests" DependsOnTargets="Compile">
+    <Exec Command='"@(NUnitConsole)" @(UnitTestsDLL) /xml=@(TestResultsPath)' />
+  </Target>
+  
+  
+  <Target Name="Compile" DependsOnTargets="Init">  
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild"  Properties="OutDir=%(BuildArtifactsDir.FullPath);Configuration=$(Configuration);Platform=$(BuildPlatform)" />
+   <Message Text=" proj = @(SolutionFile) ; OutDir=%(BuildArtifactsDir.FullPath);Configuration=$(Configuration);Platform=$(BuildPlatform)"></Message>
+  </Target>
+  
+  
+  <Target Name="Init" DependsOnTargets="Clean">    
+    <MakeDir Directories="@(BuildArtifactsDir)"></MakeDir>
+  </Target>
+
+  <Target Name="Clean">
+    <RemoveDir Directories="@(BuildArtifactsDir)"></RemoveDir>
+  </Target>
+ 
+</Project>
